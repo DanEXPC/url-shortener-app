@@ -1,11 +1,11 @@
-const {} = require('express')
+const {Router} = require('express')
 const config = require('config')
 const shortid = require('shortid')
 const Link = require('../models/Link')
 const auth = require('../middleware/auth.middleware')
 const router = Router()
 
-router.post('/generate', auth, async (req, re) => {
+router.post('/generate', auth, async (req, res) => {
     try {
         const baseUrl = config.get('baseUrl')
         const { from } = req.body
